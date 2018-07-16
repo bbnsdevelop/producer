@@ -7,7 +7,9 @@ public class Employee {
 	private String designation;
 	private double salary;
 	
-	
+	public Employee(){
+		
+	}
 	public Employee(Long id, String name, String designation, double salary) {
 		this.id = id;
 		this.name = name;

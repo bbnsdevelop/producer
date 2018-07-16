@@ -15,10 +15,11 @@ import br.com.producer.service.EmployeeService;
 public class EmployeeController {
 
 	@Autowired
-	private EmployeeService employeeService; 
-	
-	@GetMapping("/employee")
-	public ResponseEntity<Employee> getEmployee(){
+	private EmployeeService employeeService;
+
+	@GetMapping("/employee")	
+	public ResponseEntity<Employee> getEmployee() {
 		return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployee());
 	}
+
 }
