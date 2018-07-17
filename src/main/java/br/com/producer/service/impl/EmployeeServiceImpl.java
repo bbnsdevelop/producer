@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import static java.util.Objects.isNull;
+
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import br.com.producer.domain.Employee;
@@ -24,9 +26,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@HystrixCommand(fallbackMethod = "getDataFallBack")
 	public Employee getEmployee() {
 		log.info("call getEmployee()");
-		/*if(employee.getName().equalsIgnoreCase("emp1")){
+		if(isNull(employee.getName())){
 			throw new RuntimeException();			
-		}*/		
+		}		
 		return employee;
 	}
 	
